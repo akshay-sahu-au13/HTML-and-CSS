@@ -1,0 +1,163 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-image: url(assets/music.jpg);
+    background-size: cover;
+}
+.wrapper{
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 85vh;
+    width: 70%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px #2b2b2b;
+    border: none;
+}
+.logInPage{
+    box-sizing: border-box;
+    float: left;
+    height: 100%;
+    width: 55%;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.logInPage>h2{
+    margin-left: 15%; 
+    margin-top: 10%; 
+    color: #2b2b2b; 
+    font-family: fantasy; 
+    font-weight: bolder;
+}
+.logInPage>p{
+    margin-left: 15%; 
+    margin-right: 18%; 
+    letter-spacing: 1px; 
+    color: #2b2b2b; 
+    font-family: 'Poppins', sans-serif;
+}
+form input{
+    border: 1px solid #CCC; 
+    border-radius: 3px; 
+    width: 60%; 
+    padding: 15px; 
+    display: block; 
+    margin-left: 15%; 
+    margin-top: 5%;
+}
+form>a{
+    color: dodgerblue; 
+    margin-left: 15%; 
+    margin-top: 5%; 
+    display: inline-block; 
+    text-decoration: none; 
+    font-family: 'Poppins', sans-serif; 
+    font-size: 15px;
+}
+form > p{
+    font-size: 12px; 
+    color: #747474; 
+    font-family: 'Poppins', sans-serif; 
+    margin-left: 40%;
+}
+.logIn{
+    padding: 15px; 
+    width: 20%; 
+    font-size: 19px; 
+    border-radius: 5px; 
+    box-shadow: 1px 1px 5px #056586; 
+    margin-left: 19%; 
+    background-color: #056586; 
+    color: white; 
+    border: none;
+    cursor: pointer;
+}
+.socialMediaLogin{
+    display: flex;
+}
+.socialMediaLogin > button{
+    text-align: center;
+    display: flex; 
+    align-items: center; 
+    white-space: nowrap; 
+    width: 150px; 
+    padding: 5px;
+    margin-left: 15%;
+    font-size: 14px;
+    padding-left: 5%;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+.signUpText{
+    display: block;
+    margin-top: 8%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif; 
+    font-size: 14px;
+    font-weight: bold;
+}
+.signUpText a{
+    color: dodgerblue;
+}
+.musifyWall{
+    height: 100%;
+    width: 45%;
+    float: right; 
+    position: relative; 
+    border-top-right-radius: 8px; 
+    border-bottom-right-radius: 8px;
+}
+.wrapper2{
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-80%, -50%);
+    height: 87vh;
+    width: 35%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    /* box-shadow: 5px 5px 10px #2b2b2b; */
+    padding-top: 3%;
+    border: none;
+    padding-bottom: 3%;
+    font-family: 'Poppins', sans-serif;
+    color: #2b2b2b;
+}
+form label{
+    display: block;
+    margin-left: 16%;
+    margin-top: 8%;
+    font-weight: bold;
+    font-size: 13px;
+}
+input[type="checkbox"]{
+    width: 13px;
+    height: 13px;
+    margin-left: 0%;
+    margin-top: 4%;
+    display: inline-block;
+}
+.register{
+    display: block;
+    width: 68%;
+    margin-left: 15%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: #056586;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.signUp{
+    padding: 12px;
+    margin-left: 16%;
+}
+
