@@ -1,0 +1,123 @@
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h1{
+    color: rgb(10, 10, 78);
+}
+
+
+body{
+    font-family: Nunito;
+    display: flex;
+    align-items: center; /* height */
+    height: 100vh;
+    justify-content: center; /* width */
+    width: 100%;
+    background-image:  linear-gradient(90deg, #00d0ff5b 0%, #3a47d53d 100%), url("images/bg.jpg");
+    background-size: cover;
+}
+#signup{
+    position: relative;
+    background: linear-gradient(90deg, #e3ffe7a2 0%, #d9e7ff94 100%);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.6), 0 8px 15px 0 rgba(0, 0, 0, 0.3);
+    text-align:center;
+    width:50%;
+}
+#login{
+    position: relative;
+    background: linear-gradient(90deg, #e3ffe7a2 0%, #d9e7ff94 100%);
+    /* background:  linear-gradient(90deg, #bce7f1ef 0%, rgba(149, 187, 230, 0.938) 100%); */
+    
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.6), 0 8px 15px 0 rgba(0, 0, 0, 0.3);
+    text-align:center;
+    width:30%;
+}
+label,button,input{
+    display: block;
+    letter-spacing: 1.5px;
+     
+}
+.check{
+    display: flex;     
+}
+.check input{
+    margin: 23px 20px 0 2px;
+  
+    /* box-shadow: 0px 2px 4px rgba(25, 21, 82, 0.4); */
+    border: 1px solid rgba(0, 0, 255, 0.452);
+    
+}
+.close{
+    position: absolute;
+    font-size: 20px;
+    text-align: right;
+    left: 94%;
+    top: 1%;
+    font-weight: 700;
+}
+.button{
+    width: -webkit-fill-available;
+    padding: 10px 15px; 
+    margin: 50px 0 20px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-size: medium;
+    color: white;
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    border:none;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(25, 21, 82, 0.4);
+    text-transform:uppercase;
+}
+.button:hover{
+    transform: translateY(-1px) translateX(-1px);
+
+}
+
+.link{
+    text-align: left;
+    color:indigo;
+    padding-top: 5px;
+}
+
+input{
+    width: -webkit-fill-available;
+    padding: 10px 15px 10px 30px;
+    border: 1px solid rgba(0, 0, 255, 0.452);
+}
+label{
+    padding: 10px 0 0 0;
+    text-align: left;
+    margin-top: 10px;
+    color: rgb(10, 10, 78);
+}
+.form{
+    text-align: -webkit-center;
+    padding: 10px;
+    margin: 20px;
+}
+.fa{
+    position: absolute;
+    display: flex;
+    padding: 10px;
+}
+.icon{
+    color: rgb(129, 17, 235);
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+}
+.col{
+    width:47%
+}
+
+
