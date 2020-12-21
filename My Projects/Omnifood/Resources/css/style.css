@@ -1,0 +1,375 @@
+/* Orange color : #e67e22 */
+/* SVG Filter for orange color above */
+/* filter: invert(57%) sepia(21%) saturate(4473%) hue-rotate(353deg) brightness(99%) contrast(83%); */
+
+/* ------------------------------------------------ */
+/* Basic setup */
+/* ------------------------------------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #ffffff;
+    color: #555555;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* ------------------------------------------------ */
+/* REUSABLE COMPONENTS */
+/* ------------------------------------------------ */
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+section {
+     padding: 80px 0;
+}
+
+.box {
+    padding: 1%;
+}
+
+section .row_2 {
+    display: flex;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+
+/* ------------------------------------------------ */
+/* HEADINGS */
+/* ------------------------------------------------ */
+
+h1,
+h2,
+h3  {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    word-spacing: 3px;
+    font-size: 250%;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2:after {
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 110%;
+    margin-bottom: 10%;
+}
+
+/* --------Paragraphs---------- */
+
+.long-copy {
+    line-height: 145%;
+    width: 60%;
+    margin-left: 20%;
+}
+
+.box p {
+    font-size: 90%;
+    line-height: 145%;
+}
+
+/* ------------------------------------------------ */
+/* BUTTONS */
+/* ------------------------------------------------ */
+
+.btn:link, 
+.btn:visited {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 200px;
+    transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+
+.btn-full:link,
+.btn-full:visited {
+    background-color: #e67e22;
+    border: 1px solid #e67e22;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    color:#e67e22 ;
+    border: 1px solid #e67e22;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #bf6516;
+}
+
+.btn-full:hover,
+.btn-full:active {
+    border: 1px solid #bf6516;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    color:#fff ;
+    border: 1px solid #bf6516;
+}
+
+/* ------------------------------------------------ */
+/* HEADER */
+/* ------------------------------------------------ */
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.699), rgba(0, 0, 0, 0.699)), url(img/hero.jpg) ;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.hero-text-box {
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* text-align: center; */
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+}
+
+.main-nav {
+    float: right;
+    list-style: none;
+    display: flex;
+    margin-top: 55px;
+}
+
+.main-nav li {
+    margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+    padding: 6px 0;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #e67e22;
+}
+
+/* ------------------------------------------------ */
+/* FEATURES */
+/* ------------------------------------------------ */
+
+.section-features .long-copy {
+    margin-bottom: 30px;
+}
+
+
+/* ------------------------------------------------ */
+/* MEALS */
+/* ------------------------------------------------ */
+.section-meals {
+    padding: 0;
+}
+.meals-showcase {
+    list-style: none;
+    width: 100%;
+    display: flex;
+}
+
+.meals-showcase li {
+    display: inline ;
+    float: left;
+    width: 25%;
+    /* margin: 0.5%; */
+}
+
+.meal-photo {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+
+}
+
+.meal-photo img {
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+    transform: scale(1.15);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.meal-photo img:hover {
+    opacity: 1;
+    transform: scale(1.03);
+}
+/* --------------------------------------- */
+        /* HOW IT WORKS */
+/* --------------------------------------- */
+
+.section-steps {
+    background-color: #f4f4f4;
+    
+}
+
+.steps-box:first-child {
+    margin-top: 30px;
+
+    text-align: right;
+    padding-right: 3%;
+}
+
+.steps-box:last-child {
+    padding-left: 3%;
+    margin-top: 70px;
+}
+
+.app-screen {
+    width: 40%;
+    
+}
+
+.works-step {
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.works-step:last-of-type {
+    margin-bottom: 90px;
+}
+
+.works-step div {
+    color: #e67e22;
+    border: 2px solid #e67e22;
+    display: inline-block;
+    border-radius: 50%;
+    height: 55px;
+    min-width: 55px; 
+    text-align: center;
+    padding: 10px;
+    /* float: left; */
+    font-size: 150%; 
+    margin-right: 25px;
+
+}
+
+
+
+.btn-app img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+/* --------------------------------------- */
+        /* CITIES */
+/* --------------------------------------- */
+
+.section-cities .city-img{
+    max-width: 110%;
+    height: auto;
+} 
+
+.section-cities .col div img {
+    padding-top: 15px;
+    filter: invert(57%) sepia(21%) saturate(4473%) hue-rotate(353deg) brightness(99%) contrast(83%);
+}
+
+.section-cities .row_2 div{
+    margin-left: 10px;
+}
+
+.section-cities .row_2 div:first-child {
+    margin-left: 0;
+}
+
+
+/* --------------------------------------- */
+        /* TESTIMONIALS */
+/* --------------------------------------- */
+
+
+.section-testimonial {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url(./img/back-customers.jpg);
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+}
+
+.section-testimonial cite img{
+    border-radius: 50%;
+    height: 50px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.section-testimonial .row_2 blockquote {
+    font-style: italic;
+    padding: 2%;
+    line-height: 145%;
+    position: relative;
+    margin-top: 40px;
+}
+
+cite {
+    font-size: 90%;
+    margin-top: 25px;
+    display:block;
+}
+
+blockquote::before {
+    content:"\201C" ;
+    font-size: 500%;
+    display:block;
+    position: absolute;
+    top: -5px;
+    left:-5px;
+}
+
+
+
