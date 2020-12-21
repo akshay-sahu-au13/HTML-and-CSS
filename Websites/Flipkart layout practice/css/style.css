@@ -1,0 +1,305 @@
+
+
+/*---------------------------------------------*/
+                /* Defaults */
+                /* Theme color: #2874F0 */
+/*---------------------------------------------*/
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 15px;
+    font-family: Inter, sans-serif, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: rgb(69, 75, 80);
+    text-rendering: optimizeLegibility;
+
+}
+
+
+/*---------------------------------------------*/
+                /* Header */
+/*---------------------------------------------*/
+
+.header {
+    background-color: #2874F0;
+}
+
+.header .navbar {
+    width: 90vw;
+    height: 55px;
+    margin: 0 auto;
+    /* position: sticky; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #fff;
+    
+}
+
+.header .navbar .ls img {
+    height: 30px;
+    width: 75px;
+    margin-right: 1vw;
+}
+
+.header nav .ls {
+    display: flex;
+}
+
+/*----------- Search bar ---------- */
+
+.header .navbar .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .navbar .search input{
+    height: 36px;
+    padding: 10px;
+    width: 38vw;
+    border: none;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header .navbar .search ion-icon {
+    background: #fff;
+    padding-right: 10px;
+    width: 20px;
+    height: 36px;
+    color:#2874F0;
+    font-weight: 800;
+    cursor:pointer;
+    --ionicon-stroke-width: 60px;
+}
+
+/*---------------- Login --------------*/
+
+.header nav .login-btn {
+    height: 30px;
+    width: 120px;
+    padding-top: 5px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 1px;
+    transition: 0.2s;
+}
+
+.header nav .login-btn:hover {
+    transform: translate(2px,-2px);
+}
+
+.header .navbar .login-btn a  {
+    text-decoration: none;
+    color: #2874F0;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+
+
+/*---------------- More --------------*/
+
+.header nav .more {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header nav .more ion-icon {
+    font-size: 11px;
+    margin-left: 3px;
+    opacity: 0.9;
+}
+/*---------------- Cart --------------*/
+
+.header .navbar .cart {
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.header .navbar .cart ion-icon {
+    font-size: 20px;
+}
+
+/*---------------------------------------------*/
+                /* Section Categories */
+/*---------------------------------------------*/
+
+.section-categories {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.301);
+    box-shadow: 0 3px 5px rgba(128, 128, 128, 0.247);
+}
+
+.section-categories .row {
+    display: flex;
+    height: 40px;
+    width: 90vw;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    color:black;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.section-categories .row span ion-icon {
+    font-size: 10px;
+    color: dimgray;
+}
+
+.section-categories .row a {
+    color: black ;
+    text-decoration: none;
+}
+
+.section-categories .row span:hover,
+.section-categories .row a:hover  {
+    color: #2874F0;
+    transition: 0.2s;
+}
+
+/*---------------------------------------------*/
+                /* Section Sale */
+/*---------------------------------------------*/
+
+.section-sale {
+    /* width: 100vw; */
+    /* margin: 0 auto; */
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6px;
+    /* background-color: rgb(241, 237, 231); */
+}
+
+.section-sale .sec-1 img{
+    /* position: absolute; */
+    /* top: 8px; */
+    width: 100%;
+    /* margin-top: 6px; */
+    transition: 0.3s;
+}
+
+.section-sale .sec-2 img{
+    transition: 0.3s;
+    /* width: 100vw; */
+}
+
+.section-sale .sec-1:hover {
+    cursor: pointer;
+    transform: scale(1.008)
+}
+
+.section-sale .sec-2:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+/*---------------------------------------------*/
+                /* Section Slider */
+/*---------------------------------------------*/
+
+.section-sale .sales-slide {
+    /* position: absolute; */
+    /* top: 500px; */
+    display: flex;
+    width: 100%;
+    margin: 8px auto;
+    justify-content: center;
+    
+}
+
+.section-sale .sales-slide .slider {
+    display: flex;
+    /* padding-top: 30px; */
+    background-color: #fff;
+    justify-content: space-between;
+    flex-basis: 77.8%;
+}
+
+.section-sale .sales-slide .slider h3 {
+    color: black;
+    text-align: center;
+    padding-top: 20px;
+    font-weight: 500;
+}
+
+.section-sale .sales-slide .slider span {
+    font-size: 18px;
+    color: #388E3C;
+    padding: 10px 0;
+}
+
+.section-sale .sales-slide .top-offers {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+    justify-content: flex-end;
+}
+
+.section-sale .sales-slide .top-offers h2 {
+    padding-bottom: 40px;
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+    color:black;
+}
+
+.section-sale .sales-slide .top-offers button {
+    padding: 14px 25px;
+    transform: translateX(50%);
+    margin-bottom: 5px;
+    font-family: Inter, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: #2874F0;
+    border: none;
+    border-radius: 3px;
+}
+
+.section-sale .sales-slide .sales-ad {
+    margin-left: 10px;
+}
+
+.ipad, .Mattress, .Ac {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.slider img:nth-child(2n) {
+    border-radius: 10px;
+}
+
+.Ac h3 {
+    margin-top:130px
+}
+
+/* ----------Footer--------------*/
+
+footer {
+    margin: 0 auto;
+    margin-top:px;
+    border-top: 1px solid gray;
+    box-shadow: 0 -5px 9px rgba(128, 128, 128, 0.945);
+    
+}
+
+footer img {
+    width: 100%;
+    /* margin: 0 auto; */
+
+}
