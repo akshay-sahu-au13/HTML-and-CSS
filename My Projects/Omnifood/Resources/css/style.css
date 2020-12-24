@@ -44,6 +44,9 @@ section .row_2 {
     margin: 0 auto;
 }
 
+.icon-small {
+    font: 50%;
+}
 
 /* ------------------------------------------------ */
 /* HEADINGS */
@@ -54,7 +57,7 @@ h2,
 h3  {
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-weight: 300;
+    font-weight: 350;
 }
 
 h1 {
@@ -105,7 +108,8 @@ h3 {
 /* ------------------------------------------------ */
 
 .btn:link, 
-.btn:visited {
+.btn:visited,
+input[type = submit] {
     display: inline-block;
     padding: 10px 30px;
     font-weight: 300;
@@ -116,7 +120,8 @@ h3 {
 }
 
 .btn-full:link,
-.btn-full:visited {
+.btn-full:visited,
+input[type = submit] {
     background-color: #e67e22;
     border: 1px solid #e67e22;
 }
@@ -128,12 +133,15 @@ h3 {
 }
 
 .btn:hover,
-.btn:active {
+.btn:active,
+input[type = submit]:hover,
+input[type = submit]:active {
     background-color: #bf6516;
 }
 
 .btn-full:hover,
-.btn-full:active {
+.btn-full:active,
+ {
     border: 1px solid #bf6516;
 }
 
@@ -371,5 +379,115 @@ blockquote::before {
     left:-5px;
 }
 
+/* --------------------------------------- */
+        /* Pricing Plans */
+/* --------------------------------------- */
 
+.section-plans {
+    background-color: #f4f4f4;
+}
+
+.section-plans .row_2 {
+    justify-content: space-evenly;
+}
+
+.row_2 .col-plan {
+    width: 28%;
+}
+
+.plan-box ul {
+    list-style: none;
+}
+
+.plan-box ul li {
+    padding: 5px 0;
+}
+
+.plan-box {
+    /* padding: 20px; */
+    background-color: rgba(255, 255, 255, 0.719);
+    border-radius: 5px;
+    box-shadow: 0 3px 4px rgb(233, 230, 230);
+    
+}
+
+.plan-box div {
+    padding: 15px;
+    border-bottom: 1px solid rgba(223, 222, 222, 0.521);
+}
+
+.plan-box div:first-child {
+    background-color: rgba(236, 236, 236, 0.993);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.plan-box div:last-child {
+    text-align: center;
+    border: 0;
+}
+
+.plan-box ion-icon {
+    color: #e67e22;
+    --ionicon-stroke-width: 50px;
+    font-size: 75%;
+    padding-right: 11px;
+}
+
+.section-plans .plan-price {
+    color: #f3882a;
+    padding-bottom: 10px;
+}
+
+.plan-price span {
+    font-size: 300%;
+    font-weight: 300;
+}
+
+.plan-price-meal {
+    font-size: 80%;
+}
+
+/* --------------------------------------- */
+        /* Contact Form */
+/* --------------------------------------- */
+
+.section-form {
+
+}
+
+input[type = text],
+input[type = email],
+select,
+textarea {
+    width: 100%;
+    padding: 7px;
+    border-radius: 3.5px;
+    border: 1px solid #cccccc;
+}
+
+.row_2 .col1 {
+    width: 32%;
+    margin: 15px 0;
+}
+
+.row_2 .col2 {
+    width: 68%;
+    margin: 10px 0;
+}
+
+.contact-form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+textarea{
+    height: 100px;
+}
+
+input[type = checkbox] {
+    margin: 10px 7px 10px 0;
+}
+
+*:focus {outline:none;}
 
