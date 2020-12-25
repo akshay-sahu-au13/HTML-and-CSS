@@ -38,7 +38,7 @@ section {
     padding: 1%;
 }
 
-section .row_2 {
+.row_2 {
     display: flex;
     max-width: 1140px;
     margin: 0 auto;
@@ -47,7 +47,9 @@ section .row_2 {
 .icon-small {
     font: 50%;
 }
-
+/* ion-icon {
+    color: #e67e22;
+} */
 /* ------------------------------------------------ */
 /* HEADINGS */
 /* ------------------------------------------------ */
@@ -136,19 +138,18 @@ input[type = submit] {
 .btn:active,
 input[type = submit]:hover,
 input[type = submit]:active {
-    background-color: #bf6516;
+    background-color: #d35400;
 }
 
 .btn-full:hover,
-.btn-full:active,
- {
-    border: 1px solid #bf6516;
+.btn-full:active{
+    border: 1px solid #d35400;
 }
 
 .btn-ghost:hover,
 .btn-ghost:active {
     color:#fff ;
-    border: 1px solid #bf6516;
+    border: 1px solid #d35400;
 }
 
 /* ------------------------------------------------ */
@@ -452,9 +453,9 @@ blockquote::before {
         /* Contact Form */
 /* --------------------------------------- */
 
-.section-form {
+/* .section-form {
 
-}
+} */
 
 input[type = text],
 input[type = email],
@@ -491,3 +492,82 @@ input[type = checkbox] {
 
 *:focus {outline:none;}
 
+/* --------------------------------------- */
+        /* Footer */
+/* --------------------------------------- */
+
+footer {
+    background-color: #333;
+    font-size: 85%;
+    padding-top: 40px;
+}
+
+footer .row_2 {
+    justify-content: space-between;
+    
+}
+
+.row_2 .col12 ul {
+    display: flex;
+    list-style-type: none;   
+}
+
+.row_2 .col12 ul li {
+    margin-left: 30px;
+}
+
+.row_2 .col12 ul li:first-child{
+    margin-left: 0;
+}
+
+.footer-nav a:link,
+.footer-nav a:visited,
+.social-links a:link,
+.social-links a:visited {
+    text-decoration: none;
+    color: #888;
+    transition: 0.25s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+    color: #dddddd;
+}
+
+.social-links a {
+    transition: 1s;
+}
+
+.social-links a:link,
+.social-links a:visited {
+    font-size: 155%;
+}
+
+ion-icon[name = "logo-facebook"],
+ion-icon[name = "logo-twitter"],
+ion-icon[name = "logo-instagram"],
+ion-icon[name = "logo-google"] {
+    transition: 0.3s;
+}
+
+.social-links a ion-icon[name = "logo-facebook"]:hover {
+    color: #3b44bb;
+}  
+
+.social-links a ion-icon[name = "logo-twitter"]:hover {
+    color: #359ff7;
+}
+
+.social-links a ion-icon[name = "logo-instagram"]:hover {
+    color: #ee7269;
+}
+
+.social-links a ion-icon[name = "logo-google"]:hover {
+    color: #dda439;
+}
+
+footer p {
+    color: #888;
+    margin: 30px auto;
+    font-size: 90%;
+}
