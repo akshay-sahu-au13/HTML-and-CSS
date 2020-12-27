@@ -499,7 +499,7 @@ input[type = checkbox] {
 footer {
     background-color: #333;
     font-size: 85%;
-    padding-top: 40px;
+    padding-top: 50px;
 }
 
 footer .row_2 {
@@ -568,6 +568,6 @@ ion-icon[name = "logo-google"] {
 
 footer p {
     color: #888;
-    margin: 30px auto;
+    margin: 40px auto;
     font-size: 90%;
 }
