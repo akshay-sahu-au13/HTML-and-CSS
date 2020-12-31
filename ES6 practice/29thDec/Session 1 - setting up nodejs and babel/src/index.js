@@ -1,4 +1,5 @@
-
+import { add } from './func';
+console.log(add(9,1));
 console.log("Hello there! It is working fine now.");
 
 console.log("Let's begin today's assignment and start with destructuring...");
