@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StratGrow</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <!-- Modal -->
+  <div class="modal">
+    <form>
+      <div class="close">
+        <img src="./images/ico-close.svg" alt="close" title="close">
+      </div>
+      <div class="heading">
+        <h3>Contact us</h3>
+        <p class="para">Fill up the form, and we will contact you back as soon as possible. If you want, give us a call at <a href="tel:800-721-4953">800-721-4953</a> or email us at <a href="mailto:info@stratgrow.com">info@stratgrow.com</a></p>
+        <img src="./images/email-illustration.svg" alt="Email">
+      </div>
+
+      <div class="form-element">
+        <div class="form-group">
+          <label for="">Full name*</label>
+          <input type="text" name="name">
+        </div>
+        <div class="form-group">
+          <label for="">Email*</label>
+          <input type="email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="">Contact no.*</label>
+          <input type="number" name="contact">
+        </div>
+        <div class="form-group">
+          <label for="">Purpose*</label>
+          <select name="purpose">
+            <option value="1">Discuss about a project</option>
+            <option value="2">Lorem ipsum dolor sit amet.</option>
+            <option value="3">Lorem, ipsum dolor.</option>
+          </select>
+        </div>
+        <div class="form-group full-width">
+          <label for="">Message</label>
+          <textarea name="message"></textarea>
+        </div>
+        <button class="primary" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="wrapper">
+        <a href="./index.html" class="logo">
+          <img src="./images/logo.png" alt="StratGrow logo">
+        </a>
+
+        <ul>
+          <li class="dropdown"><a href="#">Services</a></li>
+          <li><a href="#">Work</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><button type="button" aria-label="Let's Talk" class="primary small open-modal">Let's talk</button></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero section -->
+    <div class="hero">
+      <div class="wrapper">
+        <div class="content">
+          <h1>Your complete business growth solution</h1>
+          <p class="subheading">At Stratgrow, we serve as your partner to help you Grow your business, Expand your reach, Build your brand, and Attract more customers.</p>
+          <button class="primary open-modal">Get Started</button>
+        </div>
+
+        <div class="mouse-icon">
+          <img src="./images/ico-mouse.svg" alt="mouse">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Service section -->
+  <section id="services">
+    <div class="wrapper">
+
+      <h2 class="centered">Services we provide</h2>
+
+      <div class="all-services">
+        <a href="#" class="service">
+          <img src="./images/service-01.svg" alt="Brand Building">
+          <h3>Brand Building</h3>
+        </a>
+        <a href="#" class="service">
+          <img src="./images/service-02.svg" alt="Digital Marketing">
+          <h3>Digital Marketing</h3>
+        </a>
+        <a href="#" class="service">
+          <img src="./images/service-03.svg" alt="Social Media">
+          <h3>Social Media</h3>
+        </a>
+        <a href="#" class="service">
+          <img src="./images/service-04.svg" alt="Creative Content">
+          <h3>Creative Content</h3>
+        </a>
+        <a href="#" class="service">
+          <img src="./images/service-05.svg" alt="Strategy & Planning">
+          <h3>Strategy & Planning</h3>
+        </a>
+        <a href="#" class="service">
+          <img src="./images/service-06.svg" alt="Website Development">
+          <h3>Website Development</h3>
+        </a>
+        <a href="#" class="service">
+          <img src="./images/service-07.svg" alt="Business Consulting">
+          <h3>Business Consulting</h3>
+        </a>
+      </div>
+
+    </div>
+  </section>
+  
+  <script src="./js/main.js"></script>
+</body>
+</html>

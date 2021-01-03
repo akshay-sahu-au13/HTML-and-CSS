@@ -1,0 +1,35 @@
+#services {
+  .all-services {
+    margin: -2rem;
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .service {
+      margin: 2rem;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      height: 28rem;
+      width: 28rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        box-shadow: var(--shadow);
+      }
+
+      img {
+        height: 15rem;
+        display: block;
+      }
+
+      h3 {
+        margin-top: 3rem;
+      }
+    }
+  }
+}
