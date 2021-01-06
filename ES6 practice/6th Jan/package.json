@@ -1,0 +1,22 @@
+{
+  "name": "day05",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-watch ./src/index.js"
+  },
+  "author": "Akshay",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
+    "babel-polyfill": "^6.26.0",
+    "babel-watch": "^7.3.0",
+    "rimraf": "^3.0.2"
+  }
+}
