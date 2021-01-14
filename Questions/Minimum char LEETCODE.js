@@ -1,3 +1,4 @@
+
 const minCharacters = function(a, b) {
     let n1 = a.length;
     let n2 = b.length;
