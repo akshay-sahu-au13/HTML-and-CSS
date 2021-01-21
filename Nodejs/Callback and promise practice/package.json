@@ -1,0 +1,21 @@
+{
+  "name": "question1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "callback and promises.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-watch promise.js",
+    "cb": "babel-watch callback.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-watch": "^7.3.0",
+    "isomorphic-fetch": "^3.0.0"
+  }
+}
