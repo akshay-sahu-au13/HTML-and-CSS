@@ -16,3 +16,4 @@ function checkDigit(membershipId) {
     };
 
 console.log(checkDigit(55555))
+console.log(checkDigit(1553555))
