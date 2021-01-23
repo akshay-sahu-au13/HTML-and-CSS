@@ -15,7 +15,7 @@ app.set('view engine', 'hbs');
 const layout = path.join('layouts','index');
 
 app.get('/', (req,res) => {
-    res.send(`<h1> HOME PAGE </h1><br><br>
+    res.sendFile(`<h1> HOME PAGE </h1><br><br>
     <h2><a href="/signup">Sign Up</a></h2>`)
 });
 
