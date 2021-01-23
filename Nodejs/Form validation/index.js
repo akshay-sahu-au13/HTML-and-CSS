@@ -11,7 +11,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: true });
 app.use(express.static('public'));
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine', 'hbs');
-// app.engine("hbs", ({defaultLayout: "signup.hbs"}))
+
 const layout = path.join('layouts','index');
 
 app.get('/', (req,res) => {
