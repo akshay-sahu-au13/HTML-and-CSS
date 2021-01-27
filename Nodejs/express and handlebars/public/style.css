@@ -1,0 +1,114 @@
+*, * ::before, * ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* color: rgb(58, 56, 56); */
+    
+}
+
+body {
+    margin: 5px;
+    font-family: "Poppins";
+    background-color: rgba(181, 250, 233, 0.541);
+    font-size: 18px;
+    font-weight: normal;
+    padding-left: 30px;
+    border: 2px solid black;
+    
+}
+
+
+header {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.nav {
+    margin-left: 500px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 50px;
+}
+
+.navlinks {
+    margin-left: 30px;
+    background-color: cornflowerblue;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s
+}
+
+.navlinks:hover {
+    transform: scale(1.1);
+    background-color: rgb(138, 138, 138);
+    max-width: 200px
+}
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+.home {
+        width: 100px;
+        background-color: darkgray;
+        margin-top: 30px;
+        border-radius: 10px;
+        padding:10px;
+        padding-left: 24px;
+}
+
+.navlinks a {
+    text-decoration: none;
+    color: rgb(252, 252, 252);
+}
+
+.hero .headings {
+    font-size: 40px;
+    text-decoration: underline;
+    
+    
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    transition: 0.2s;
+    
+}
+
+.hobbies,
+.experience,
+.skills {
+    transition: 0.3s;
+}
+
+
+.hero .dp {
+    padding-top: 10px;
+    
+}
+
+.hero .about {
+    padding-left: 40px;
+}
+
+ul {
+    list-style: inside;
+}
+
+.hero:hover {
+    background-color: cornflowerblue;
+    transform: scale(1.1);
+    color: cornsilk;
+}
+
+.hobbies:hover,
+.experience:hover,
+.skills:hover  {
+    background-color: cornflowerblue;
+    transform: scale(1.2);
+    color: cornsilk;
+    padding-left: 20%;
+}
+
+ 
