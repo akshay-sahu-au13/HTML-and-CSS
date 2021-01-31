@@ -3,9 +3,16 @@ const app = express();
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 
+//creating a middleware
+const logger = (req, res, next) => {
+    console.log(`${req.protocol}://${req.get('host')}${req.originalUrl}`)
+    next()
+}
+app.use(logger);
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
 
 // Handlebars Settings
 
