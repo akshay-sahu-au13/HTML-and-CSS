@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
+const moment = require('moment');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 
 //creating a middleware
 const logger = (req, res, next) => {
-    console.log(`${req.protocol}://${req.get('host')}${req.originalUrl}`)
+    console.log(`${req.protocol}://${req.get('host')}${req.originalUrl} hit at ${moment().format()}`)
     next()
 }
 app.use(logger);
