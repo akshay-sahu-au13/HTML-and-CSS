@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // Setting static folder
 app.use(express.static('public'));
+
 // importing and using api/members route 
 app.use('/api/members', require('./routes/api/member'));
 
