@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <a href="/signup">Add new Users</a>
+    <div class="row">
+        <h2>Registered Users are: </h2>
+
+        <ul>
+            {{#each users}}
+            <li>Name: {{this.name}}</li>
+            <li>Email: {{this.email}}</li>
+            <li>Phone: {{this.Number}}</li>
+            <li>Address: {{this.Address}}</li>
+            <li>Hobbies: {{this.Hobbies}}</li>
+            <br>
+            {{/each}}
+        </ul>
+
+    </div>
+</div>
+
+<script>
+    console.log('users page')
+</script>
