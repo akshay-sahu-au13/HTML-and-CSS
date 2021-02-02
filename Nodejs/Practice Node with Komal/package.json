@@ -1,0 +1,16 @@
+{
+  "name": "node_practice",
+  "version": "1.0.0",
+  "description": "practicing with Komal",
+  "main": "file_1.js",
+  "scripts": {
+    "start": "nodemon file_1.js",
+    "babelstart": "babel-watch file_1.js"
+  },
+  "author": "Akshay",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}
