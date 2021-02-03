@@ -1,0 +1,57 @@
+<span>
+    <h1>
+        SIGNUP FORM
+    </h1>
+</span>
+
+<div class="container-fluid">
+    {{!-- <div class="row"> --}}
+        <form action="/signup" method="post" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <label for="name">
+                    Name: <input type="text" name="name" id="name" required="required" value="{{name}}">
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="email">
+                    Email: <input type="email" name="email" id="email" required="required" value="{{email}}">
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="address">
+                    Address: <input type="text" name="address" id="address" required="required" value="{{address}}">
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="profileimg">
+                    Profile picture: <input type="file" multiple="multiple" accept="image/*" name="profileimg"
+                        id="profileimg">
+                    <p>upto 5 images</p>
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="t&c">
+                    <input type="checkbox" name="t&c" id="t&c" required="required" checked value="Agreed"> I agree to
+                    all
+                    the
+                    terms
+                    and conditions.
+                </label>
+            </div>
+
+            <button type="submit">Sign Up</button>
+
+        </form>
+        {{!--
+    </div> --}}
+</div>
+<div>
+    <a href="/users">
+        <h3>Users page here!</h3>
+    </a>
+</div>
