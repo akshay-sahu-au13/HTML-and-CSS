@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const PORT = 1234;
-const layout = path.join('layouts', 'index.js');
+const layout = path.join('layouts', 'index');
 const app = express();
 const User = require('./models/User');
 
@@ -47,6 +47,34 @@ app.post('/signup', (req,res)=> {
         res.render('signup', {...data, err});
         return;
     }
+
+    if (!req.body.email) {
+        err.email = 'Please enter the email';
+        res.render('signup', {...data, err});
+        return;
+    }
+
+    const existingUser = users.filter(item=>item.email == req.body.email);
+    if (existingUser.length) {
+        err.email = 'User already exists';
+        return res.render('signup', {...data, err});
+    };
+
+    ++userCount;
+    users.push(User({id:userCount , ...req.body}));
+    res.redirect('/login', {layout, title:'Log in'});
+});
+
+app.get('/login', (req, res) => {
+    console.log(req.cookies);
+    if (req.cookies.user && typeof req.cookies.user !== 'string') {
+        return res.redirect('/profile');
+    }
+    res.render('login', {
+        title: "Log in",
+        layout,
+        email: ""
+    });
 });
 
 
