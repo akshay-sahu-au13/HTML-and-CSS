@@ -6,7 +6,6 @@ const app = express();
 const layout = path.join(__dirname, '/views', 'index');
 const mongoose = require('mongoose');
 const url = 'mongodb://localhost/mydb';
-
 const user = require('./models/user');
 
 app.set('view engine', 'hbs');
