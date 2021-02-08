@@ -6,23 +6,25 @@
             <div class="grp1">
                 <label for="name">
                     Name: <input type="text" name="name" id="name" maxlength="25" value="{{name}}">
+                    <span class="err">{{err.name}}</span>
                 </label>
-                <span>{{err.name}}</span>
+
                 <label for="email">
                     Email: <input type="email" name="email" id="email" required value="{{email}}">
+                    <span class="err">{{err.email}}</span>
                 </label>
-                <span>{{err.email}}</span>
+
             </div>
             <div class="grp1">
                 <label for="phone">
                     Contact: <input type="number" name="phone" id="phone" minlength="10" maxlength="13" required
                         value="{{phone}}">
                 </label>
-                <span>{{err.phone}}</span>
+                <span class="err">{{err.phone}}</span>
                 <label for="password">
                     Password: <input type="password" name="password" id="password" required minlength="6">
                 </label>
-                <span>{{err.password}}</span>
+                {{!-- <span class="err">{{err.password}}</span> --}}
             </div>
             <label for="T&C">
                 <input type="checkbox" name="Agree_terms" required id="T&C" checked="checked">

@@ -93,3 +93,8 @@ input {
     padding: 7px;
 
 }
+
+.err {
+    font-size: 70%;
+    color: rgb(255, 153, 153);
+}
