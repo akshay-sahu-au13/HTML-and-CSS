@@ -3,27 +3,48 @@ const PORT = 1111;
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
-const layout = path.join(__dirname, '/views', 'index');
+const layout = path.join('layouts', 'index');
 const mongoose = require('mongoose');
 const url = 'mongodb://localhost/mydb';
 const user = require('./models/user');
+const session = require('express-session');
+const mongoDbSession = require('connect-mongodb-session')(session);  
 
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'))
 
+const store = new mongoDbSession({
+    uri: url,
+    collection: 'mySessions'
+});
+
+app.use(session({
+    secret: 'key that will sign the cookie',
+    resave: false,
+    saveUninitialized: false,
+    store: store
+}));
 app.use(express.static(path.join(__dirname,'assets')));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 
-mongoose.connect(url, {useNewUrlParser: true});
+
+mongoose.connect(url, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+});
 const con  = mongoose.connection;
 con.on('open', ()=> {
     console.log('Connected....');
 });
 
 app.get('/', (req, res) => {
-    res.send("Welcome to Express home");
+    console.log(req.session);
+    console.log(req.session.id);
+    req.session.isAuth = true;
+    res.render('home', {title:'Home page', layout});
 });
 
 app.get('/mydb', async(req, res) => {
