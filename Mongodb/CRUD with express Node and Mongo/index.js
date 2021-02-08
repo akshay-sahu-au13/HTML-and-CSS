@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const url = 'mongodb://localhost/mydb';
 const user = require('./models/user');
 const session = require('express-session');
+const router = require('./routes/routes');
 const mongoDbSession = require('connect-mongodb-session')(session);  
 
 app.set('view engine', 'hbs');
@@ -28,7 +29,7 @@ app.use(express.static(path.join(__dirname,'assets')));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-
+app.use('/', router);
 
 mongoose.connect(url, {
     useNewUrlParser: true,
