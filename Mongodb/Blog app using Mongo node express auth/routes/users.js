@@ -10,7 +10,7 @@ router.post('/signup',
     [
         check('firstName', 'Please Enter the first name').not().isEmpty(),
         check('email', 'Please enter the email').isEmail(),
-        check('password', 'Please enter the password').isEmpty()
+        check('password', 'Please enter the password').isLength({ min: 6 })
     ],
     async (req, res) => {
         const errors = validationResult(req);
@@ -23,7 +23,7 @@ router.post('/signup',
         }
 
         try {
-            const user = await User.findOne({ email: req.body.email });
+            let user = await User.findOne({ email: req.body.email });
 
             if (user) {
                 return res.status(400).json({
@@ -44,7 +44,7 @@ router.post('/signup',
                 email: req.body.email,
             })
             const salt = await bcrypt.genSalt(10);
-            user.password = await bcrypt(req.body.password, salt);
+            user.password = await bcrypt.hash(req.body.password, salt);
 
             await user.save();
 
