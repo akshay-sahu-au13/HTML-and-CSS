@@ -1,0 +1,11 @@
+
+GET http://localhost:1122/posts
+
+
+###
+
+POST http://localhost:1122/login
+Content-Type: application/json
+{
+    "username": "Akshay"
+}
