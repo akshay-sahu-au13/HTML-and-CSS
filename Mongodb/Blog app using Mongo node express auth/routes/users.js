@@ -129,3 +129,18 @@ router.post('/login',
     }
 );
 
+router.get('/profile',
+auth,
+async(req, res) => {
+    try {
+        const user = User.findById(req.user.id);
+        res.json({
+            data: user,
+            errors: [],
+            message: 'Fetched user Profile'
+        });
+    } catch (e) {
+        console.log(e.message)
+        res.status(500).send('Error in fetching...')
+    }
+});
