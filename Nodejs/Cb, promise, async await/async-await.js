@@ -26,11 +26,11 @@ function userVideos(email) {
 function videoNames(video) {
 
     return new Promise((res, rej) => {
-        console.log(video)
+
         setTimeout(() => {
             res({video, Cartoons: "Lion King", Movies:  "3 idiots", Tutorials: "Node.js crash course"});
 
-        }, 1500);
+        }, 1900);
     });
 }
 
@@ -45,12 +45,28 @@ function videoNames(video) {
 //     });
 // });
 
-const users = login("xyz@gmail.com", 'Ravi');
+// const users = login("xyz@gmail.com", 'Ravi');
 
-users.then(data => userVideos(data.email))
-.then(videos => videoNames(videos))
-.then(names => {
-    console.log(`The name of the video ${names.video[0]} is ${names.Cartoons}`)
-})
-.catch(err => console.log(err,"Couldn't fetch the data"))
-console.log("Finished");
+// users.then(data => userVideos(data.email))
+// .then(videos => videoNames(videos))
+// .then(names => {
+//     console.log(`The name of the video ${names.video[0]} is ${names.Cartoons}`)
+// })
+// .catch(err => console.log(err,"Couldn't fetch the data"))
+// console.log("Finished");
+
+
+async function msgapp () {
+    let user = login("xyz@gmail.com", 'Ravi')
+    let user1 = await  user.then(data=> data.email)
+    console.log("user1:",user1)
+    let videos = userVideos(user1)
+    let videonames = await videos.then(videos=>videos)
+    console.log("Video types are:", videonames)
+    let vids = videoNames(videonames)
+    let res = await vids.then(data=>data)
+    console.log(res)
+    console.log('Finished');
+}
+msgapp()
+
