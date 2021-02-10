@@ -2,8 +2,7 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const { check, validationResult } = require('express-validator/check');
 const router = express.Router();
-const bcrypt = require('bcrypt');
-const User = require('../schemas/User');
+const bcrypt = require('bcryptjs');
 const auth = require('../middleware/auth');
 const User = require('../Schemas/userSchema');
 
@@ -11,7 +10,7 @@ router.post('/signup',
     [
         check('firstName', 'Please Enter the first name').not().isEmpty(),
         check('email', 'Please enter the email').isEmail(),
-        check('password', 'Please enter the password').islength({ min: 6 })
+        check('password', 'Please enter the password').isEmpty()
     ],
     async (req, res) => {
         const errors = validationResult(req);
@@ -144,3 +143,5 @@ async(req, res) => {
         res.status(500).send('Error in fetching...')
     }
 });
+
+module.exports = router;

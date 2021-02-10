@@ -7,7 +7,7 @@ const auth = (req, res, next) => {
         return res.status(401).json({
             msg: 'Please Login!!!',
             error: [],
-            data = {}
+            data : {}
         })
     }
     try{
@@ -16,7 +16,7 @@ const auth = (req, res, next) => {
         next();
     } catch(e) {
         console.log(e);
-        res.status(403).json({msg: 'Invalid Token', err = [], data = {}});
+        res.status(403).json({msg: 'Invalid Token', err : [], data : {}});
     }
 
 }
