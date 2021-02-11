@@ -1,7 +1,6 @@
 // Given an unsorted array, find the maximum difference between the successive elements in
 // its sorted form.
 // // Return 0 if the array contains less than 2 elements.
-
 const maxmDiff = (arr) => {
 
     arr.sort((a, b)=> a - b);
