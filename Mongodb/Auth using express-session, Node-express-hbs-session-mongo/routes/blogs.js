@@ -7,4 +7,8 @@ const Blog = require('../Schemas/blog');
 const auth = require('../auth/auth');
 
 
-router.get()
+router.get('/')
+
+
+
+module.exports
