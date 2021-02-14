@@ -1,0 +1,23 @@
+<h1 class="heading1">Write your blog here...</h1>
+
+<div class="container">
+    <div class="inner-wrapper">
+        <form action="/blog" method="POST" class="signup">
+
+
+            <label for="title">
+                Title: <input type="text" name="title" id="title" required placeholder="Enter the title here">
+                <span class="err">{{error.email}}</span>
+            </label>
+
+
+            <label for="body">
+                Content: <textarea name="body" id="body" cols="30" rows="10"
+                    placeholder="Enter the contents here..."></textarea>
+            </label>
+
+
+            <button type="submit" class="buttons button">Post blog</button>
+        </form>
+    </div>
+</div>
