@@ -5,6 +5,7 @@ const layout = path.join('layouts', 'index');
 const User = require('../Schemas/user');
 const bcrypt = require('bcryptjs');
 const { check, validationResult } = require('express-validator/check');
+const auth = require('../auth/auth');
 const { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require('constants');
 
 
@@ -67,6 +68,11 @@ router.post('/signup',
 
 
 router.get('/login', (req, res)=> {
+    console.log(req.cookies);
+    
+    if(req.session.user) {
+        return res.redirect('/profile');
+    }
     res.render('login', {
         title: "Login",
         layout,
@@ -102,11 +108,20 @@ async (req, res) => {
         error.password = "Incorrect password!"
         return res.render('login', {title:"Login", layout, error})
     }
+    req.session.user = user
 
-    res.render('profile', {title: "Profile", user, layout});
+    res.redirect('/profile');
 
+});
 
+router.get('/profile', auth, (req, res)=> {
+    console.log(req.session.user)
+    res.render('profile', {title: "Profile", user: req.session.user, layout});
+});
 
+router.get('/logout', (req, res)=> {
+    req.session.user = "";
+    res.redirect('/login');
 });
 
 module.exports = router;

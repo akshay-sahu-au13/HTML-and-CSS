@@ -8,14 +8,15 @@ const auth = require('../auth/auth');
 
 
 router.get('/', auth, (req, res)=>{
-    res.render('blogs', {layout, title:"User Blogs"});
+    res.render('blog', {layout, title:"User Blogs"});
 });
 
 router.post ('/', auth, async (req, res)=> {
+    console.log(req.session.user)
     const blog = new Blog ({
         title: req.body.title,
         body: req.body.body,
-        userId: req.user.id
+        userId: req.session.user._id
     });
 
     await blog.save();
@@ -26,7 +27,7 @@ router.post ('/', auth, async (req, res)=> {
         blog
     }
 
-    res.render('blogs', data)
+    res.render('blog', data)
 });
 
 
