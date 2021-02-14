@@ -34,9 +34,7 @@ router.post('/signup',
         const err = validationResult(req);
         console.log(err);
         const error = {err}
-        // if (!err.isEmpty()){
 
-        // }
         try {
             let user = await User.findOne({email: req.body.email});
             if (user) {
