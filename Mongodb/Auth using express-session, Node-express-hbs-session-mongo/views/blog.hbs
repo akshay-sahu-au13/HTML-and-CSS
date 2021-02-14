@@ -1,7 +1,9 @@
 <h1 class="heading1">Write your blog here...</h1>
 
 <div class="container">
+    <span class="backtoprofile"><a href="/profile" class="button">Back to profile</a></span>
     <div class="inner-wrapper">
+
         <form action="/blog" method="POST" class="signup">
 
 
@@ -19,5 +21,9 @@
 
             <button type="submit" class="buttons button">Post blog</button>
         </form>
+
+        <span class="blogspan">{{blog.message}}</span>
+        <span class="blogspan">{{blog.title}}</span>
+        <span class="blogspan">{{blog.body}}</span>
     </div>
 </div>

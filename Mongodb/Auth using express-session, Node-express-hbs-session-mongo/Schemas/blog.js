@@ -6,6 +6,11 @@ const Blog = mongoose.Schema({
         required: true
     },
     body: String,
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "user",
+        default: null
+    },
     date: {
         type: Date,
         default: Date.now()

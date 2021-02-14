@@ -103,7 +103,7 @@ async (req, res) => {
         return res.render('login', {title:"Login", layout, error})
     }
 
-    res.redirect('/profile');
+    res.render('profile', {title: "Profile", user, layout});
 
 
 

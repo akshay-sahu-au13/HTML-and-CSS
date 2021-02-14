@@ -7,8 +7,28 @@ const Blog = require('../Schemas/blog');
 const auth = require('../auth/auth');
 
 
-router.get('/')
+router.get('/', auth, (req, res)=>{
+    res.render('blogs', {layout, title:"User Blogs"});
+});
+
+router.post ('/', auth, async (req, res)=> {
+    const blog = new Blog ({
+        title: req.body.title,
+        body: req.body.body,
+        userId: req.user.id
+    });
+
+    await blog.save();
+    blog.message = "Blog created successfully..."
+    const data = {
+        title:"blog created",
+        layout,
+        blog
+    }
+
+    res.render('blogs', data)
+});
 
 
 
-module.exports
+module.exports = router;
