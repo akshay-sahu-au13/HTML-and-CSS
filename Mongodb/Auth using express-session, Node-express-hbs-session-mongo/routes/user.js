@@ -68,7 +68,7 @@ router.post('/signup',
 
 
 router.get('/login', (req, res)=> {
-    console.log(req.cookies);
+    // console.log(req.cookies);
     
     if(req.session.user) {
         return res.redirect('/profile');
@@ -115,7 +115,7 @@ async (req, res) => {
 });
 
 router.get('/profile', auth, (req, res)=> {
-    console.log(req.session.user)
+    // console.log(req.session.user)
     res.render('profile', {title: "Profile", user: req.session.user, layout});
 });
 
