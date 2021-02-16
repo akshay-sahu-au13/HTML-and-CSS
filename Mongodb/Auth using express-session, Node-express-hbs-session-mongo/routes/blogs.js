@@ -31,5 +31,16 @@ router.post ('/', auth, async (req, res)=> {
 });
 
 
+router.get('/allblogs', auth, async (req, res) => {
+    const user = await User.findById({ "_id": req.session.user._id });
+    const blogs = await Blog.find({ "userId": req.session.user._id });
+    const author = user.name
+    const Blogs = blogs.map(item => {
+        return {title: item.title, Content: item.body}
+    })
+    res.status(200).json({AUTHOR: author, BLOGS: Blogs});
+    
+});
+
 
 module.exports = router;
