@@ -7,13 +7,13 @@ const Blog = require('../Schemas/blog');
 const auth = require('../auth/auth');
 
 
-router.get('/', auth, (req, res)=>{
-    res.render('blog', {layout, title:"User Blogs"});
+router.get('/', auth, (req, res) => {
+    res.render('blog', { layout, title: "User Blogs" });
 });
 
-router.post ('/', auth, async (req, res)=> {
+router.post('/', auth, async (req, res) => {
     console.log(req.session.user)
-    const blog = new Blog ({
+    const blog = new Blog({
         title: req.body.title,
         body: req.body.body,
         userId: req.session.user._id
@@ -22,7 +22,7 @@ router.post ('/', auth, async (req, res)=> {
     await blog.save();
     blog.message = "Blog created successfully..."
     const data = {
-        title:"blog created",
+        title: "blog created",
         layout,
         blog
     }
@@ -36,10 +36,16 @@ router.get('/allblogs', auth, async (req, res) => {
     const blogs = await Blog.find({ "userId": req.session.user._id });
     const author = user.name
     const Blogs = blogs.map(item => {
-        return {title: item.title, Content: item.body}
+        return { title: item.title, Content: item.body }
     })
-    res.status(200).json({AUTHOR: author, BLOGS: Blogs});
-    
+    const data = {
+        title: "All Blogs",
+        Blogs,
+        author
+    }
+    res.render('allblogs', data)
+    // res.status(200).json({AUTHOR: author, BLOGS: Blogs});
+
 });
 
 
