@@ -213,8 +213,8 @@ ul {
 }
 
 .read-blog {
-    box-shadow: 1px -1px 3px 1px rgba(245, 245, 245, 0.082), 1px 1px 8px 2px rgba(247, 250, 236, 0.13);
-    color: rgba(217, 239, 252, 0.89);
+    box-shadow: 0px -3px 0px 0px rgba(245, 245, 245, 0.233), 0px 3px 0px 0px rgba(252, 252, 252, 0.233);
+    color: rgba(219, 255, 249, 0.884);
     background-color: initial;
-    text-shadow: 1px 1px 2px rgba(3, 3, 163, 0.842);
+    text-shadow: 1px 1px 2px rgb(117, 2, 139);
 }
