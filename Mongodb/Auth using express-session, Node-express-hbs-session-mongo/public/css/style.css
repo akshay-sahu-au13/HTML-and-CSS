@@ -206,3 +206,15 @@ ul {
     color: coral;
     text-shadow: 1px 1px 3px rgb(248, 220, 220)smoke;
 }
+
+.allblogs {
+    display: flex;
+    justify-content: center;
+}
+
+.read-blog {
+    box-shadow: 1px -1px 3px 1px rgba(245, 245, 245, 0.082), 1px 1px 8px 2px rgba(247, 250, 236, 0.13);
+    color: rgba(217, 239, 252, 0.89);
+    background-color: initial;
+    text-shadow: 1px 1px 2px rgba(3, 3, 163, 0.842);
+}

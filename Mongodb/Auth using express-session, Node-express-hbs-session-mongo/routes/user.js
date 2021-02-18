@@ -3,10 +3,31 @@ const path = require('path');
 const router = express.Router();
 const layout = path.join('layouts', 'index');
 const User = require('../Schemas/user');
+const Blog = require('../Schemas/blog');
 const bcrypt = require('bcryptjs');
 const { check, validationResult } = require('express-validator/check');
 const auth = require('../auth/auth');
 const { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require('constants');
+
+router.get('/alluserblogs', async (req, res) => {
+
+    const blogs = await Blog.find().populate('userId');
+    console.log(blogs)
+
+    res.render('alluserblogs', {title:"Read Blogs", layout, blogs});
+    
+        
+        
+
+    // const data = {
+    //     title: "All Blogs",
+    //     Blogs,
+    //     author
+    // }
+    // res.json(blogs)
+    // res.status(200).json({AUTHOR: author, BLOGS: Blogs});
+
+});
 
 
 router.get('/signup', (req, res) => {
@@ -39,7 +60,7 @@ router.post('/signup',
             let user = await User.findOne({email: req.body.email});
             if (user) {
                 error.email = 'User already exists! Please enter a different email or login'
-                return res.render('signup', {title:"Sign up", error})
+                return res.render('signup', {title:"Sign up", error, layout});
             }
             user = new User({
                 name: req.body.name,
@@ -49,13 +70,13 @@ router.post('/signup',
             const salt = await bcrypt.genSalt(10);
             user.password = await bcrypt.hash(req.body.password, salt);
             
-            await user.save()
-            const data = {
-                error,
-                title: 'Sign up',
-                layout,
-                ...user
-            }
+            await user.save();
+            // const data = {
+            //     error,
+            //     title: 'Sign up',
+            //     layout,
+            //     ...user
+            // }
             res.redirect('/login');
         } catch(e) {
             console.log(e);
