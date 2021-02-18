@@ -14,7 +14,7 @@ const pool = new Pool({
 app.get('/users', (req, res)=> {
     pool.query('SELECT * FROM customers ORDER BY first_name ASC', (err, result)=> {
         if (err) throw err;
-        res.json(result)
+        res.json(result);
     })
 })
 
@@ -22,15 +22,15 @@ app.get('/users', (req, res)=> {
 app.get('/users/:id', (req, res)=> {
     pool.query(`SELECT * FROM customers WHERE id = ${id}`, (err, result)=> {
         if (err) throw err;
-        res.json(result.rows)
+        res.json(result.rows);
     })
 });
 
 app.post('/addUser', (req, res)=>{
     const {first_name, last_name, gender, phone_number} = req.body;
     pool.query('INSERT INTO customers VALUES ($1, $2, $3, $4)', [first_name, last_name, gender, phone_number], (err, result)=> {
-        if err throw err
-        res.send(result)
+        if (err) throw err;
+        res.send(result);
     })
 });
 
