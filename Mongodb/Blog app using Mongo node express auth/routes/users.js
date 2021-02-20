@@ -1,3 +1,5 @@
+// Need to add patch and delete routes as well...
+
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const { check, validationResult } = require('express-validator/check');
