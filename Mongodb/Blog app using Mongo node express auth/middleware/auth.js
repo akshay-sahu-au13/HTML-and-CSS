@@ -1,3 +1,5 @@
+// Using JWT to verify if the user is logged in or not
+
 const jwt = require('jsonwebtoken');
 
 const auth = (req, res, next) => {
