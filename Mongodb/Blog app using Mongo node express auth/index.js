@@ -16,7 +16,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/users/todos', todoRoutes);
 
 app.get('/', (req, res) => {
-    res.send("<h1>Welcome to Express app</h1>")
+    res.send("<center><h1>Welcome to Express app</h1></center>")
 });
 
 
