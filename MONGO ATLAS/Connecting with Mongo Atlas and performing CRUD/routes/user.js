@@ -52,4 +52,9 @@ router.put('/user/:id', async (req, res)=> {
     });
 });
 
+router.delete('/user/:id', async(req, res)=>{
+    let user = await User.findOneAndDelete({_id: req.params.id});
+    res.json({message:"User Deleted Successfully"})
+});
+
 module.exports = router;
