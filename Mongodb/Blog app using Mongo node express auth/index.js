@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/api/users', userRoutes);
-// app.use('/api/users/todos', todoRoutes);
+app.use('/api/users/todos', todoRoutes);
 
 app.get('/', (req, res) => {
     res.send("<h1>Welcome to Express app</h1>")

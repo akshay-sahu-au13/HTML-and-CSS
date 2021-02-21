@@ -11,7 +11,7 @@ const auth = (req, res, next) => {
         })
     }
     try{
-        const decoded = jwt.verify(token, 'jwt-secret');
+        const decoded = jwt.verify(token, 'jwt_secret');
         req.user = decoded.user;
         next();
     } catch(e) {
