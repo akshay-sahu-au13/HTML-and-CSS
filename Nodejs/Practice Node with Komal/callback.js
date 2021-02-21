@@ -44,7 +44,6 @@ function message (msgid ) {
 // });
 
 
-// console.log("Finished");
 
 
 // login('akx@gmail.com', 123456).then(data => {
@@ -72,5 +71,8 @@ login('akx@gmail.com', 123456).then(data => {
     console.log(err);
 });
 
+
+
+console.log("Finished");
 
 
