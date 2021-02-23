@@ -12,20 +12,10 @@ const { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require('constants');
 router.get('/alluserblogs', async (req, res) => {
 
     const blogs = await Blog.find().populate('userId');
-    console.log(blogs)
+    // console.log(blogs)
 
     res.render('alluserblogs', {title:"Read Blogs", layout, blogs});
-    
-        
-        
 
-    // const data = {
-    //     title: "All Blogs",
-    //     Blogs,
-    //     author
-    // }
-    // res.json(blogs)
-    // res.status(200).json({AUTHOR: author, BLOGS: Blogs});
 
 });
 

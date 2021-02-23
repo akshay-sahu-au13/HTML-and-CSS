@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const MongoURI = 'mongodb://localhost:27017/MY_DB_1'
+const MongoURI = "mongodb+srv://akshay:admin@cluster0.3sl2w.mongodb.net/atlasdb?retryWrites=true&w=majority"
 
 const InitMongo = async ()=> {
     try {
