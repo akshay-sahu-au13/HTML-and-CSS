@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const User = require('../model/user');
 const bcrypt = require('bcryptjs');
-
-
+const jwt = require('jsonwebtoken');
+const config = require('../config/config');
 router.post('/signup', async(req, res)=> {
     try {
         let user = await User.findOne({email:req.body.email});
@@ -26,7 +26,11 @@ router.post('/signup', async(req, res)=> {
         if (error) throw error;
         console.log(error);
     }
-})
+});
+
+router.get('/login', (req, res) => {
+    res.send('<center><h1>Welcome to the login page</h1></center><br><br> <h3> Please enter the email and password <h3>')
+});
 
 router.post('/login', async (req, res)=> {
     try {
@@ -42,15 +46,41 @@ router.post('/login', async (req, res)=> {
             res.status(400).json({
             mgs: "Incorrect Password!"});
         }
-    
+
+        const token = await jwt.sign({id:user._id}, config.secret, {expiresIn: '12h'} );
+        console.log(token);
         res.status(200).json({
-            msg: "Login Success!"
-        })
+            msg: "Login Success!", token
+        });
     } catch (error) {
         if (error) throw error;
         console.log(error);
     }
 });
+
+router.get('/profile', async(req, res)=> {
+    const token = req.header('token');
+    if(!token) {
+        return res.status(400).send("User not authorised, Please Login");
+    }
+
+    const userID = jwt.verify(token, config.secret);
+    console.log(userID)
+    if (!userID) {
+        return res.status(404).send({msg: 'Invalid Token'});
+    }
+    const user = await User.findById({_id:userID.id});
+    res.status(200).json({
+        msg: `"Welcome to profile page ${user.name}!"`,
+        Userdata: user
+    })
+
+});
+
+router.get('/logout', (req, res)=> {
+    delete req.header('token');
+    res.redirect('/api/login');
+})
 
 router.get('/users', async (req, res)=> {
     try {
