@@ -78,7 +78,7 @@ router.get('/profile', async(req, res)=> {
 });
 
 router.get('/logout', (req, res)=> {
-    delete req.header('token');
+    delete req.header('token'); // need to find a way to delete the headers from client side during logout
     res.redirect('/api/login');
 })
 
