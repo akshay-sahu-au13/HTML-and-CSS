@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.main_header {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #3498db;
+}
+
+.main_header h1 {
+  color: #34495e;
+  font-size: 5rem;
+}
+
+.main_header h1:hover {
+  color: chartreuse;
+}
+
+.main_header h1::after {
+  content: " ----New content-----";
+}
+
+.main_header p {
+  color: #34495e;
+  font-size: 5rem;
+}
+
+.main_header p:hover {
+  color: coral;
+}
+/*# sourceMappingURL=main.css.map */
