@@ -118,6 +118,7 @@ async (req, res) => {
         return res.render('login', {title:"Login", layout, error})
     }
     req.session.user = user
+    console.log(req.session)
 
     res.redirect('/profile');
 
