@@ -2,18 +2,9 @@
 // Variables
 // Nesting
 // Mixin
-@mixin flexo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
 
-@mixin hover($col) {
-    &:hover {
-        color: $col;
-    }
-}
+@import 'mixin';
+@import 'vars';
 
 * {
     margin:0;
@@ -25,7 +16,7 @@ html {
     font-size: 62.5%;
 }
 
-$bg-color: #3498db;
+
 
 .main_header{
     width: 100vw;
@@ -34,7 +25,7 @@ $bg-color: #3498db;
     background-color: $bg-color;
 
     h1{
-        color: #34495e;
+        color: $font-color;
         font-size: 3rem + 2rem;
         @include hover(lightgreen);
         &::after {

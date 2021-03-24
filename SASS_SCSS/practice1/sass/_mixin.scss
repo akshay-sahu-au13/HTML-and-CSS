@@ -1,0 +1,12 @@
+@mixin flexo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin hover($col) {
+    &:hover {
+        color: $col;
+    }
+}
