@@ -31,6 +31,9 @@ html {
 .main_header h1 {
   color: #27273bde;
   font-size: 5rem;
+  border: 2px solid;
+  border-bottom-color: #16e1fc;
+  border-top-color: #16e1fc;
 }
 
 .main_header h1:hover {

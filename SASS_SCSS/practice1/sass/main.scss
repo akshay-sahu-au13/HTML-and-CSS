@@ -4,6 +4,8 @@
 // Mixins
 // Parameters
 // Partials -- _name.css
+// Functions
+// Conditionals
 
 @import 'mixin';
 @import 'vars';
@@ -33,6 +35,9 @@ html {
         &::after {
             content: " ----New content-----";
         }
+        border: 2px solid;
+        border-bottom-color: rgb(22, 225, 252);
+        border-top-color: rgb(22, 225, 252);
     }
     
     p {
