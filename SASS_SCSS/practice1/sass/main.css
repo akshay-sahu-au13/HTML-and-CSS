@@ -34,7 +34,7 @@ html {
 }
 
 .main_header h1:hover {
-  color: chartreuse;
+  color: lightgreen;
 }
 
 .main_header h1::after {

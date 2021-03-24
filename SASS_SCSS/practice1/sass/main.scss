@@ -1,6 +1,19 @@
 // Operators in SCSS
 // Variables
 // Nesting
+// Mixin
+@mixin flexo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin hover($col) {
+    &:hover {
+        color: $col;
+    }
+}
 
 * {
     margin:0;
@@ -17,18 +30,13 @@ $bg-color: #3498db;
 .main_header{
     width: 100vw;
     height:100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    @include flexo();
     background-color: $bg-color;
 
     h1{
         color: #34495e;
         font-size: 3rem + 2rem;
-        &:hover {
-            color: chartreuse;
-        }
+        @include hover(lightgreen);
         &::after {
             content: " ----New content-----";
         }
@@ -37,9 +45,8 @@ $bg-color: #3498db;
     p {
         color: #34495e;
         font-size: 3rem + 2rem;
-        &:hover {
-            color: coral;
-        }
+        @include hover(coral);
+        
     }
 }
 
