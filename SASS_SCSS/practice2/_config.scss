@@ -1,0 +1,5 @@
+@mixin animate($x: 0, $y: 0, $time: 0) {
+  transform: translateX($x);
+  transform: rotateY($y);
+  transition: $time;
+}

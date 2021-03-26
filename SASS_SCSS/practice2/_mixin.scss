@@ -1,0 +1,23 @@
+@mixin flex() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin container($m, $p, $b) {
+  margin: $m;
+  padding: $p;
+  border: $b;
+}
+
+@mixin heading($size, $color) {
+  font-size: $size;
+  color: $color;
+}
+
+@mixin img($h, $w, $br) {
+  height: $h;
+  width: $w;
+  border: 2px solid $grey;
+  border-radius: $br;
+}

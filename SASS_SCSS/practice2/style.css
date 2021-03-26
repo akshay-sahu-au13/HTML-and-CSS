@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.font-size-10px {
+  font-size: 10px;
+  color: #585858;
+}
+
+.font-size-20px {
+  font-size: 20px;
+  color: #585858;
+}
+
+.font-size-30px {
+  font-size: 30px;
+  color: #585858;
+}
+
+.font-size-40px {
+  font-size: 40px;
+  color: #585858;
+}
+
+.font-size-50px {
+  font-size: 50px;
+  color: #585858;
+}
+
+.font-size-60px {
+  font-size: 60px;
+  color: #585858;
+}
+
+.font-size-70px {
+  font-size: 70px;
+  color: #585858;
+}
+
+.font-size-80px {
+  font-size: 80px;
+  color: #585858;
+}
+
+.font-size-90px {
+  font-size: 90px;
+  color: #585858;
+}
+
+.font-size-100px {
+  font-size: 100px;
+  color: #585858;
+}
+
+body {
+  background-color: #cffde6de;
+  color: #363634;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 18px;
+}
+
+.container {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #353434;
+}
+.container nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container nav img {
+  height: 80px;
+  width: 80px;
+  border: 2px solid #585858;
+  border-radius: 20px;
+  box-shadow: 2px 2px 3px 3px rgba(128, 128, 128, 0.507);
+}
+.container nav .menu {
+  width: 30%;
+  margin-right: 30px;
+}
+.container nav .menu ul {
+  display: flex;
+  justify-content: space-between;
+}
+.container nav .menu li {
+  color: white;
+  border: 1px solid blue;
+  background-color: #ae83ffde;
+  padding: 10px 20px;
+  border-radius: 5px;
+  list-style: none;
+}
+.container h1 {
+  font-size: 200%;
+  color: #363634;
+  text-align: center;
+  margin: 30px auto;
+}
+
+section {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #585858;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section .left, section .right, section .center {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #585858;
+  height: 200px;
+  width: 30%;
+  background-color: #f5bde7;
+}
+section .left:hover, section .right:hover, section .center:hover {
+  transform: translateX(90deg);
+  transform: rotateY(180deg);
+  transition: 3s;
+}
+section .right, section .center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: center;
+  background-color: #f7f89bde;
+}
+section .center {
+  flex-direction: row;
+  align-items: center;
+  background-color: #ae83ffde;
+}
+section .center p {
+  transform: translateX(90deg);
+  transform: rotateY(180deg);
+  transition: 5s;
+}
+
+/*# sourceMappingURL=style.css.map */
