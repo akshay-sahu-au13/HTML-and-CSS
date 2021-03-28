@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: rgb(51, 50, 50);
+  font-size: 62.5%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: #acd7e8;
+}
+
+.container {
+  font-size: 1.3rem;
+  padding: 20px 30px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto;
+  width: 80vw;
+  height: auto;
+  background-color: #eeeeee;
+  padding: 30px 20px;
+  border-radius: 8px;
+}
+.lable-grp {
+  margin: 15px 0;
+}
+input,
+select {
+  margin: 15px 0;
+}
+input,
+select {
+  padding: 5px 10px;
+  width: 130%;
+}
+
+p {
+  margin: 20px auto;
+}
+
+.form1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form2 {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.form1 label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 30px;
+}
+
+.grp {
+  display: flex;
+  align-items: center;
+}
+
+.grp label {
+  margin-left: 15px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 30px;
+  max-width: 40%;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.button {
+  margin-top: 40px;
+}
+
+.btn {
+  padding: 8px 15px;
+  background-color: cornflowerblue;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
