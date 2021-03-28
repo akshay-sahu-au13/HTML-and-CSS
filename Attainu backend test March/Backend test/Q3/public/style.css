@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(148, 147, 148, 0.726);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #474747;
+}
+a {
+  text-decoration: none;
+}
+.container-login {
+  margin: 100px auto;
+  background-color: rgba(70, 131, 180, 0.87);
+  padding: 50px;
+  max-width: max-content;
+  text-align: center;
+  border: 2px solid rgb(78, 78, 87);
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 3px rgb(141, 139, 139);
+}
+
+.container-login span {
+  font-size: 200%;
+  color: #494949;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.container-login .login {
+  margin: 50px auto;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  margin: 20px auto;
+  padding: 10px 20px;
+  width: 300px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  letter-spacing: 4px;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: royalblue;
+  box-shadow: 1px 1px 1px 1px rgba(185, 217, 236, 0.651);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.btn:hover {
+  background-color: rgb(21, 70, 219);
+}
+
+.todos {
+  margin: 40px auto;
+  padding: 30px;
+  background-color: rgb(176, 248, 212);
+}
+
+.todos li {
+  margin: 15px auto;
+  font-size: 110%;
+  font-family: cursive;
+}

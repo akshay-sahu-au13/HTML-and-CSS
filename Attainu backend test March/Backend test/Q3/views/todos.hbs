@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="header">
+        <div class="pic"></div>
+        <div class="menu"></div>
+
+    </div>
+
+    <div class="container-login">
+        <form action="./todos" method="POST" class="login">
+            <div>
+                <input type="text" name="title" placeholder="Enter Todo activity" required>
+            </div>
+            <div class="create-todos " style="max-width: max-content;"><button class="btn">Create a Todo item</button>
+            </div>
+        </form>
+    </div>
+
+    <section>
+        <span
+            style="margin: 20px 660px; font-size:50px; color:rgb(219, 253, 255); text-shadow: 1px 1px 1px black;">Todos</span>
+        <div class="todos">
+            <ul>
+                {{#each user.todos}}
+                <li>{{this.title}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </section>
+</div>
