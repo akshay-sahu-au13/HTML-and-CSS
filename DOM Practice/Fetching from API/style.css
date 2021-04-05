@@ -7,7 +7,7 @@ body {
   font-size: 62.5%;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   height: 100vh;
-  color: #555;
+  color: #444;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,4 +36,8 @@ p,
 img {
   font-size: 1rem;
   padding: 0.5rem;
+}
+
+p {
+  color: #777;
 }
