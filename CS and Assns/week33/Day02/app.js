@@ -34,8 +34,11 @@ async function postreq(email,pwd){
             window.location.replace('home.html')
             console.log("Post request Successful");
         } else {
-            window.location.replace('home.html')
-            console.log("POST request failed");
+            setTimeout(() => {
+                window.location.replace('home.html');
+                console.log("POST request failed");
+            }, 4000);
+            
         }
     } catch (error) {
         console.log("Error in post request");
