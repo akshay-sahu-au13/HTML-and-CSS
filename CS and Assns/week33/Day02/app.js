@@ -31,14 +31,13 @@ async function postreq(email,pwd){
         let response = await fetch("https://reqres.in/api/login", options);
         console.log("Response: ", response);
         if (response.status == 200) {
-            window.location.replace('home.html')
-            console.log("Post request Successful");
-        } else {
             setTimeout(() => {
                 window.location.replace('home.html');
-                console.log("POST request failed");
-            }, 4000);
+                console.log("Post request Successful");
+            }, 3000);
             
+        } else {
+                console.log("POST request failed");
         }
     } catch (error) {
         console.log("Error in post request");
