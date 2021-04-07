@@ -31,13 +31,14 @@ body {
 }
 
 #label {
-  font-size: 150%;
+  font-size: 180%;
   color: darkgrey;
 }
 
-#value {
+#value,
+#last_updated {
   font-weight: 600;
-  font-size: 150%;
+  font-size: 180%;
   color: inherit;
 }
 
@@ -47,9 +48,32 @@ body {
 }
 
 #global {
-  min-height: 25%;
+  min-height: 35%;
+  padding: 20px 30px;
 }
 
 .stats div {
   padding: 10px 40px;
+}
+
+select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(220, 255, 253, 0.658);
+  box-shadow: -2px -2px 3px 3px white, 2px 2px 4px 2px rgba(138, 139, 143, 0.63);
+}
+
+option {
+  padding: 5px 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 120%;
+}
+
+#covid_data h1 {
+  margin: 30px 0;
+}
+
+#last_updated span {
+  color: rgb(84, 88, 134);
 }

@@ -4,6 +4,20 @@
 //     displayData()
 // });
 
+function formatDate(date) {
+    console.log(typeof(dat))
+    var d = date.slice(8,10);
+    console.log("Day:", d);
+    var m = date.slice(5,7);
+    console.log("Month:", m);
+    var y = date.slice(0,4);
+    console.log("Year:", d);
+
+    var t = date.slice(11,19);
+    console.log("Time", t)
+
+    return '' + d + '-' + m + '-' + y + " Time: "+ t;
+}
 
 $(document).ready(async function (){
 
@@ -25,8 +39,6 @@ $(document).ready(async function (){
             country_data.forEach(function(item){
                 if (item.Country === country_name) {
 
-
-                    
                     $(".card #global").css('display', 'none');
                     $(".card #start_data").css('display', 'none');
                     $(".card #covid_data").css('display', 'block')
@@ -52,7 +64,7 @@ $(document).ready(async function (){
                 <span id="label">New Recovered: </span>
                 <span id="value">${item.NewRecovered}</span>
                 </div>
-                <div id="last_updated">Last updated at: <span>${item.Date}</span></div>
+                <div id="last_updated">Last updated at: <span>${formatDate(item.Date)}</span></div>
                 
                 `)
             }
