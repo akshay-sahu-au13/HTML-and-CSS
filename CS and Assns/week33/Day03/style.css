@@ -24,3 +24,28 @@ body {
   border-radius: 20px;
   box-shadow: 0px 4px 4px rgba(209, 211, 212, 0.856);
 }
+
+#covid_data {
+  /* display: none; */
+  padding: 20px 30px;
+}
+
+#label {
+  font-size: 150%;
+  color: darkgrey;
+}
+
+#value {
+  font-weight: 600;
+  font-size: 150%;
+  color: inherit;
+}
+
+#start_data {
+  text-align: center;
+  padding: 20px 10px;
+}
+
+#global {
+  min-height: 25%;
+}
