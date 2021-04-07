@@ -23,6 +23,14 @@ body {
   min-width: 20rem;
   border-radius: 20px;
   box-shadow: 0px 4px 4px rgba(209, 211, 212, 0.856);
+  box-shadow: -2px -2px 4px 3px rgb(229, 249, 253),
+    2px 2px 4px 2px rgba(121, 129, 160, 0.096);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 20px 20px 10px 3px rgba(145, 162, 165, 0.459);
+  transform: scale(1.05);
 }
 
 #covid_data {
@@ -60,8 +68,8 @@ select {
   padding: 5px 10px;
   border-radius: 5px;
   border: none;
-  background-color: rgba(220, 255, 253, 0.658);
-  box-shadow: -2px -2px 3px 3px white, 2px 2px 4px 2px rgba(138, 139, 143, 0.63);
+  background-color: rgba(220, 255, 253, 0.438);
+  box-shadow: -2px -2px 4px 3px white, 2px 2px 4px 2px rgba(138, 139, 143, 0.63);
 }
 
 option {
@@ -76,4 +84,12 @@ option {
 
 #last_updated span {
   color: rgb(84, 88, 134);
+}
+
+#line {
+  margin: 20px auto;
+  padding: unset;
+  height: 1.4px;
+  width: 78%;
+  background-color: rgba(119, 136, 153, 0.658);
 }

@@ -5,6 +5,7 @@
 // });
 
 function formatDate(date) {
+    const mon = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     console.log(typeof(dat))
     var d = date.slice(8,10);
     console.log("Day:", d);
@@ -16,7 +17,9 @@ function formatDate(date) {
     var t = date.slice(11,19);
     console.log("Time", t)
 
-    return '' + d + '-' + m + '-' + y + " Time: "+ t;
+    return ` ${d} ${mon[m-1]} ${y}`
+
+    // return '' + d + '-' + m + '-' + y + " Time: "+ t;
 }
 
 $(document).ready(async function (){
@@ -64,6 +67,7 @@ $(document).ready(async function (){
                 <span id="label">New Recovered: </span>
                 <span id="value">${item.NewRecovered}</span>
                 </div>
+                <div id="line"></div>
                 <div id="last_updated">Last updated at: <span>${formatDate(item.Date)}</span></div>
                 
                 `)
