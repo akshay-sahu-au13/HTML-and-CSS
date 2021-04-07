@@ -6,7 +6,6 @@
 
 function formatDate(date) {
     const mon = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    console.log(typeof(dat))
     var d = date.slice(8,10);
     console.log("Day:", d);
     var m = date.slice(5,7);
@@ -31,21 +30,49 @@ $(document).ready(async function (){
     });
 
     const res = await all_data;
-    const global = res.global;
+    const global = res.Global;
+    console.log("GLOBAL:",global)
     const country_data = res.Countries
     console.log(country_data)
+    $("#global").html(`
+        <h1>Global Covid Data</h1><br><br>
+        <div>
+        <span id="label">Total Confirmed:  </span>
+        <span id="value">${global.TotalConfirmed}</span>
+        </div>
+        <div>
+        <span id="label">Total Deaths:  </span>
+        <span id="value">${global.TotalDeaths}</span>
+        </div>
+        <div>
+        <span id="label">Total Recovered:  </span>
+        <span id="value">${global.TotalRecovered}</span>
+        </div>
+        <div>
+        <span id="label">New Confirmed:  </span>
+        <span id="value">${global.NewConfirmed}</span>
+        </div>
+        <div>
+        <span id="label">New Deaths:  </span>
+        <span id="value">${global.NewDeaths}</span>
+        </div>
+        <div>
+        <span id="label">New Recovered:  </span>
+        <span id="value">${global.NewRecovered}</span>
+        </div>
+    `)
 
     $("#country").click(function (e) {
-        console.log(e.target.value)
+        console.log(e.target)
         let country_name = e.target.value;
         if (e.target.value !== "none") {
             country_data.forEach(function(item){
-                if (item.Country === country_name) {
+                if (item.Country.startsWith(country_name) ) {
 
                     $(".card #global").css('display', 'none');
                     $(".card #start_data").css('display', 'none');
                     $(".card #covid_data").css('display', 'block')
-                    $("#Country").text(`${country_name}`)
+                    $("#Country").text(`${item.Country}`)
                 $(".stats").html(`
                 <div>
                 <span id="label">Total Confirmed: </span>
@@ -95,7 +122,7 @@ function displayData(data, status){
     });
     // console.log(all_countries)
     all_countries.forEach(function(country){
-        Country.append(`<option value=${country} class="name">${country}</option>`)
+        Country.append(`<option value="${country}" class="name">${country}</option>`)
     });
 
     return data
@@ -103,54 +130,3 @@ function displayData(data, status){
 }
 
 
-
-// $("#country").click(function (e) {
-//     console.log(e.target.value)
-//     if (e.target.value !== "none"){
-        
-//         $(".card #global").css('display', 'none');
-//         $(".card #start_data").css('display', 'none');
-//         $(".card #covid_data").css('display', 'block')
-//         // $("#Country").text(`${}`)
-//         $(".stats").append(`
-//             <div>
-//                 <span id="label">Total Confirmed: </span>
-//                 <span id="value"></span>
-//             </div>
-//             <div>
-//                 <span id="label">Total Deceased: </span>
-//                 <span id="value"></span>
-//             </div>
-//             <div>
-//                 <span id="label">Total Recovered: </span>
-//                 <span id="value"></span>
-//             </div>
-//             <div>
-//                 <span id="label">New Confirmed: </span>
-//                 <span id="value"></span>
-//             </div>
-//             <div>
-//                 <span id="label">New Recovered: </span>
-//                 <span id="value"></span>
-//             </div>
-//             <div id="last_updated">Last updated at: <span></span></div>
-            
-//         `)
-//     } 
-// });
-
-{/* <div class="card">
-    <div id="global">
-
-    </div>
-
-    <div id="start_data">
-        <h2>Select a country to see the data</h2>
-    </div>
-    <div id="covid_data">
-        <h1 id="Country"></h1>
-        <div class="stats">
-            <span id="label"></span>
-            <span id="value"></span>
-        </div>
-    </div> */}
