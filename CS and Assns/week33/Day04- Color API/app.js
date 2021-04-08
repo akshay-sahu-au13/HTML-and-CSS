@@ -16,7 +16,7 @@ $(window).on('load', async function(e){
     console.log(colors);
 
     let filtered = colors.data.filter(function(item){
-        console.log(item);
+        // console.log(item);
         return item.year > 2001;
     });
 
