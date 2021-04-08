@@ -15,13 +15,15 @@ $(document).ready(async function(e){
     const colors = await res;
     console.log(colors);
 
-    colors.data.forEach(function(item){
-        console.log(item)
-        if (item.year > 2001){
+    let filtered = colors.data.filter(function(item){
+        console.log(item);
+        return item.year > 2001;
+    });
+
+    filtered.map(item=> { 
             $('.container').append(`
             <div class="color" style="background-color: ${item.color};"></div>
-            `)
-        }
+            `);
     });
 
 });
