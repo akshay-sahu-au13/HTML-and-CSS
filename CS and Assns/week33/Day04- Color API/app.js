@@ -4,7 +4,7 @@ function showColors(){
 
 }
 
-$(document).ready(async function(e){
+$(window).on('load', async function(e){
 
     const res = $.ajax({
         type:"GET",
