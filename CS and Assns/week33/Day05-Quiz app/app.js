@@ -26,6 +26,16 @@ let current_question_number = 0;
 let answers = [];
 
 let loading = false;
+let level;
+$('.option').click(function(e){
+    console.log("Value: ",e.target.value);
+    level = e.target.value
+});
+
+//Quiz APIs
+const easy = "https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple";
+const medium = "https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple";
+const hard = "https://opentdb.com/api.php?amount=10&difficulty=hard&type=multiple";
 
 start_quiz_btn.click(function(event) {
     if(loading==false) {
@@ -37,9 +47,19 @@ start_quiz_btn.click(function(event) {
     // 2. call the api
 })
 
+
+
 async function fetchQuestions() {
     try {
-        let req = await fetch('https://opentdb.com/api.php?amount=10&type=multiple');
+        console.log("Level: ", level)
+        if (level == 'easy'){
+            let req = await fetch(easy);
+        } else if(level == 'medium') {
+             req = await fetch(medium);
+        } else if (level == 'hard') {
+             req = await fetch(hard);
+        }
+        
         let res = await req.json();
         console.log("got the data")
         console.log(req);
@@ -136,6 +156,7 @@ play_again_btn.click(function() {
     welcome_card.show();
     answers = [];
     quizQuestions = [];
+    quiz_card.hide();
 })
 
 function saveSelectedAnswer() {
