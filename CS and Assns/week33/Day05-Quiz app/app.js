@@ -25,20 +25,23 @@ let quizQuestions = [];
 let current_question_number = 0;
 let answers = [];
 
-let loading = false;
-let level;
-$('.option').click(function(e){
-    console.log("Value: ",e.target.value);
-    level = e.target.value
-});
-
 //Quiz APIs
 const easy = "https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple";
 const medium = "https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple";
 const hard = "https://opentdb.com/api.php?amount=10&difficulty=hard&type=multiple";
 
+let loading = false;
+let level;
+let req;
+
+$('.option').click(function(e){
+    console.log("Value: ",e.target.value);
+    level = e.target.value
+});
+
+
 start_quiz_btn.click(function(event) {
-    if(loading==false) {
+    if(loading==false && level) {
         start_quiz_btn.text('Loading ...');
         loading = true;
         fetchQuestions();
@@ -53,7 +56,7 @@ async function fetchQuestions() {
     try {
         console.log("Level: ", level)
         if (level == 'easy'){
-            let req = await fetch(easy);
+            req = await fetch(easy);
         } else if(level == 'medium') {
              req = await fetch(medium);
         } else if (level == 'hard') {
@@ -63,6 +66,7 @@ async function fetchQuestions() {
         let res = await req.json();
         console.log("got the data")
         console.log(req);
+        console.log("Result: ",res);
         if(req.ok) {
             quizQuestions = res.results;
 
@@ -80,11 +84,15 @@ async function fetchQuestions() {
     } catch(e) {
         loading = false;
         start_quiz_btn.text('Error! Please click again to start');
+        $(start_quiz_btn).click(function(e){
+            reload();
+        })
         console.log("handle the error here as well")
     }
 }
 
 function moveToNextQuestion() {
+    console.log("Current Q.no--", current_question_number)
     if(quizQuestions[current_question_number]) { //for last question it will not be executed
 
         let question_next = quizQuestions[current_question_number]; 
@@ -157,6 +165,8 @@ play_again_btn.click(function() {
     answers = [];
     quizQuestions = [];
     quiz_card.hide();
+    loading = false;
+    current_question_number = 0;
 })
 
 function saveSelectedAnswer() {
