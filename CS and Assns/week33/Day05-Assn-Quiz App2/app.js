@@ -16,6 +16,8 @@ let questionstatus = $('#question-status');
 
 let next_btn = $('#next_btn');
 let submit_btn = $('#submit_btn');
+let result_btn = $('#result_btn');
+result_btn.hide();
 
 let result_card = $('#result-card');
 let result_score = $('#result-score');
@@ -89,9 +91,23 @@ function moveToNextQuestion() {
         next_btn.hide();
         submit_btn.show();
         
+    } else {
+        submit_btn.hide();
+        next_btn.hide();
+        result_btn.show();
     }
 }
 
+result_btn.click(function () {
+    result_card.show();
+    quiz_card.hide();
+    result_score.text(`You Scored ${score}/10`);
+});
+
+play_again_btn.click(function(){
+    result_card.hide();
+    welcome_card.show();
+})
 submit_btn.click(function () {
     questionerr.hide();
     questionstatus.hide();
@@ -100,13 +116,13 @@ submit_btn.click(function () {
         choice1.checked = false;
     } else if (choice2.checked) {
         checkAnswer(2);
-        choice1.checked = false;
+        choice2.checked = false;
     } else if (choice3.checked) {
         checkAnswer(3);
-        choice1.checked = false;
+        choice3.checked = false;
     } else if (choice4.checked) {
         checkAnswer(4);
-        choice1.checked = false;
+        choice4.checked = false;
     } else {
         questionerr.show();
     }
@@ -152,7 +168,7 @@ function resetChoicesClasses() {
 
     //loop over all choices elements and reset the class to orignal classes again
 
-    for (let i = 1; i < 4; i++) {
+    for (let i = 1; i <= 4; i++) {
         $(`#choice${i}-text`)[0].className = 'btn btn-outline-primary';
     }
 }
