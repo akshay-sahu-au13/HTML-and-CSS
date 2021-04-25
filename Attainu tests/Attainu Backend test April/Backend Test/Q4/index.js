@@ -14,7 +14,7 @@ Mongo();
 app.use(express.json({ limit: '30mb', extended: true }));
 app.use(express.urlencoded({ limit: '30mb', extended: true }));
 app.use('/', movieRoutes);
-app.use('/', directorRoutes);
+// app.use('/', directorRoutes);
 
 app.listen(PORT, ()=>{
     console.log(`Server running on http://localhost:${PORT}`)

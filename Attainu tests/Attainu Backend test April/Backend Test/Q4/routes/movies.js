@@ -6,33 +6,80 @@ const Director = require('../Models/director');
 // GET ALL MOVIES
 router.get('/allmovies', async(req,res)=> {
     try {
-        const data = await Movie.find();
-        if (data){
-
-            res.send({ Message: "Below are all the movies listed", Movies: data })
+        const movies = await Movie.find().populate("director", "-_id -__v -movies");
+        // console.log(movies);
+        if (movies) {
+            res.status(200).json({
+                message: "Success",
+                data: {
+                    movies,
+                },
+            });
+        } else {
+            res.status(204).json({
+                message: "No data available, add a movie first!",
+            });
         }
-        else {
-            res.send({ Message: "couldn't find movies", Movies: data })
-        }
-
-    } catch (error) {
-        console.log(error)
-        res.send({Message:"Error while fetching movies"})
+    } catch (err){
+        console.log(err)
+        res.send({message:"Error while fetching movies"})
     }
     
 });
 
+router.get('/directors', async (req, res) => {
+    try {
+        const directors = await Director.find().populate(
+            "movies",
+            "title rating year -_id"
+        );
+        if (directors) {
+            res.status(200).json({
+                message: "Success!",
+                data: {
+                    directors,
+                },
+            });
+        } else {
+            res.status(204).json({
+                message: "No data available.",
+            });
+        }
+    } catch (err) {
+        console.log(err)
+        res.send({ message: "Error in saving" })
+    }
+})
+
+
 
 router.post('/add-movie', async (req,res)=> {
     try {
-        const data = req.body;
-        const newMovie = new Movie(data);
-        await newMovie.save();
-        res.send({Message:"Movie Saved Successfully", Added: newMovie});
+        // console.log(req.body);
+        let findDirector = await Director.findOne({
+            name: req.body.director,
+        });
 
-    } catch (error) {
-        console.log(error.message)
-        res.send({ Message: "Error while saving..." })
+        if (!findDirector) {
+            findDirector = new Director({
+                name: req.body.director,
+            });
+            await findDirector.save();
+        }
+
+        // console.log(findDirector);
+        // const directorName = findDirector.name;
+        const movie = await Movie.create({
+            ...req.body,
+            director: findDirector,
+        });
+
+        findDirector.movies.push(movie);
+        await findDirector.save();
+
+        res.send({message: "Movie added sucessfully", Movie:movie});
+    } catch (err) {
+        console.log(err);
     }
 });
 
