@@ -1,0 +1,21 @@
+<div class="flex-container-column">
+    <h2>Account Details</h2>
+    <form action="/upload-file" method="POST" enctype="multipart/form-data">
+        <div class="form-grp">
+            <label for="file"></label>
+            <input type="file" name="file" id="file">
+        </div>
+
+        <button class="btn-primary">Upload</button>
+
+    </form>
+
+    <div class="flex-container-column">
+        <div class="file">
+            <h3>{{message}}</h3>
+            <img src="./uploads/{{filepath}}" alt="uploaded-file">
+            <a href="./upload-file">{{moreUpload}}</a>
+        </div>
+    </div>
+
+</div>
