@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Movie = require('../Models/Movie');
 const Director = require('../Models/director');
+const { findOne } = require('../Models/Movie');
 
 // GET ALL MOVIES
 router.get('/allmovies', async(req,res)=> {
@@ -85,16 +86,15 @@ router.post('/add-movie', async (req,res)=> {
 
 router.patch ('/edit-movie/:id', async(req, res)=> {
     try {
+
         const updated = await Movie.findOneAndUpdate({_id:req.params.id},{
             $set:{
-                title:req.body.name,
-                director:req.body.director,
+                title:req.body.title,
                 rating:req.body.rating,
                 year:req.body.year
             }
         })
-        res.send({Message:"Movie updated successfully"}, {
-            newMovie:updated
+        res.send({Message:"Movie updated successfully"  
         })
     } catch (error) {
         console.log(error);
@@ -106,10 +106,9 @@ router.patch ('/edit-movie/:id', async(req, res)=> {
 
 router.delete('/delete-movie/:id', async(req, res)=> {
     try {
-        const deleted = await Movie.remove({_id:req.params.id});
+        await Movie.remove({_id:req.params.id});
         res.send({
             Message:"Movie Deleted!",
-            DeletedMovie:deleted
         })
     } catch (error) {
         console.log(error);
