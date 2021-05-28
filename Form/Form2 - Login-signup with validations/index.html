@@ -1,0 +1,52 @@
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="styles.css">
+
+<body>
+  <h1>Registration form</h1>
+  <div class="form-container">
+    <form name="registerForm">
+      <label for="firstName">First Name *</label>
+      <input type="text" id="firstName" name="firstName" placeholder="First Name" required />
+      <p class="error-message"></p>
+      <label for="lastName">Last Name *</label>
+      <input type="text" id="lastName" placeholder="Last name" required />
+      <p class="error-message"></p>
+      <label for="e-mail">E-mail address *</label>
+      <input type="text" id="e-mail" placeholder="enter email" required />
+      <p class="error-message"></p>
+      <label for="phoneNumber">Phone Number</label>
+      <input type="text" id="phoneNumber" maxlength="9" pattern=".{9,}" required title="9 characters length"
+        placeholder="223587972" />
+      <p class="error-message"></p>
+      <label for="password">Password *</label>
+      <input type="password" id="password" pattern=".{8,}" required title="8 characters minimum" />
+      <p class="error-message"></p>
+      <p class="password-rules">Your password should contain at least 8 characters and 1 number.</p>
+      <li><label id="gender">Gender:</label></li>
+      <li>
+        <input type="radio" name="msex" value="Male" /><span>Male</span>
+      </li>
+      <li>
+        <input type="radio" name="fsex" value="Female" /><span>Female</span>
+      </li>
+      <div class="radio-question">
+        <p>List Down your skills</p>
+        <form>
+          <input class="radio-input" type="radio" name="JS" value="JS" /> JavaScript <br>
+          <input class="radio-input" type="radio" name="Nodejs" value="node" /> Node Js <br>
+          <input class="radio-input" type="radio" name="HTML" value="HTML" /> HTML <br>
+          <input class="radio-input" type="radio" name="CSS" value="CSS" /> CSS <br>
+          <input class="radio-input" type="radio" name="Mongo" value="Mongo" /> Mongo <br>
+      </div>
+      <label for="Num1"> Number 1 </label>
+      <input type="number" name="num1" id="num1" required=true>
+      <label for="Num2"> Number 2</label>
+      <input type="number" name="num2" id="num2" required=true>
+      <div id="product"> </div>
+
+      <input class="button" type="button" value="submit" name="submit" onClick="multiply()" />
+      <input class="button" type="submit" value="submit" name="submit" onClick="formValidation()" />
+    </form>
+    <script src="./app.js"></script>
+  </div>
+</body>
