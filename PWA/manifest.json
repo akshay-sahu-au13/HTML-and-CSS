@@ -1,0 +1,27 @@
+{
+  "name": "My Portfolio",
+  "short_name": "Portfolio",
+  "start_url": "/index.html",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#6b7280",
+  "theme_color": "#0b4f6c",
+  "description": "This is my portfolio app",
+  "dir": "ltr",
+  "lang": "en-US",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "image/icon.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "image/developer.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}
